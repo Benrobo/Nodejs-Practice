@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <h1>Mysql Tutorial</h1>
+
+    <button onclick="getData()">
+        GET DATA
+    </button>
+
+    <table class="data">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+    </table>
+
+
+    <form>
+        <input type="text" name="username" class="name">
+
+        <button type="submit" class="send">
+            Send Data
+        </button>
+    </form>
+
+    <script>
+        let inp = document.querySelector(".name")
+        let btn = document.querySelector(".send")
+
+        btn.addEventListener("click", (e)=>{
+            e.preventDefault()
+
+            sendData()
+        })
+
+        async function sendData(){
+            
+            if(inp.value == ""){
+                alert("empty fields")
+                return
+            }
+            let value = { 
+                "name": inp.value, 
+            }
+
+            btn.innerHTML = "Sending Data"
+
+            let res = await fetch("/api",{
+                method: "POST",
+                headers: {
+                    "content-type" : "application/json"
+                },
+                body : JSON.stringify(value)
+            })
+            let data = await res.json()
+            btn.innerHTML = "Send Data"
+
+            console.log(data)
+        }
+
+
+        async function getData(){
+            let div = document.querySelector(".data")
+
+            
+            let res = await fetch("/getData")
+            let data = await res.json()
+            
+            // data.forEach((e)=>{
+            //     let tr = document.createElement("tr")
+            //     tr.innerHTML += `
+            //         <td>${e.id}</td>
+            //         <td>${e.name}</td>
+            //     `
+            //     div.appendChild(tr)
+            // })
+
+            console.log(data)
+        }
+
+    </script>
+</body>
+</html>

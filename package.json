@@ -1,0 +1,20 @@
+{
+  "name": "nodejs-sourcecode",
+  "version": "1.0.0",
+  "description": "this is just a nodejs short source codes containing nodejs stuff.....",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "benrobo",
+  "license": "ISC",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "express": "^4.17.1",
+    "formidable": "^1.2.2",
+    "mime-types": "^2.1.31",
+    "nodemon": "^2.0.9"
+  }
+}
