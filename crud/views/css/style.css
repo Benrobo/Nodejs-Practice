@@ -1,0 +1,23 @@
+
+
+.modal-cont{
+    width: 100%;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.938);
+    position: fixed;
+    left:0px;
+    top:0px;
+    display: none;
+}
+.modal-cont .container{
+    width:300px;
+    padding:12px;
+    background: #fff;
+}
+
+/* https://cdn2.iconfinder.com/data/icons/font-awesome/1792/caret-down-512.png */
+
