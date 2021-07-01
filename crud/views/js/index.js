@@ -84,9 +84,8 @@ function editData(){
         tdbtn.onclick = (e)=>{
             ovl.style.display = "flex"
             let id = e.target.getAttribute("data-id")
-            let tdcont = e.target.parentElement.parentElement.querySelector(".td-cont").querySelector(".name").textContent
+            let tdcont = e.target.parentElement.parentElement.querySelector(".name").textContent
             
-
             inpedit.setAttribute("data-id", id)
             inpedit.value = tdcont
 
